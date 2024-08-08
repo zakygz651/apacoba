@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catherin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>My Love</h1>
+        <audio id="audio" src="https://rr1---sn-xmjxajvh-jb3zz.googlevideo.com/videoplayback?..."></audio>
+        <button id="playPauseBtn">Play</button>
+    </div>
+    <div class="main-container">
+        <div class="static-photo"></div>
+        <div class="moving-photos">
+            <div class="slider">
+                <img src="https://telegra.ph/file/cb447dfc8dd1927ec18e5.jpg" alt="Foto 1">
+                <img src="https://telegra.ph/file/ca2676b100a7e42920347.jpg" alt="Foto 2">
+                <img src="https://telegra.ph/file/971c4176562d765acde1c.jpg" alt="Foto 3">
+            </div>
+        </div>
+    </div>
+    <div class="infokan">Gallery Foto</div>
+    <div class="puzzle-container">
+        <div class="puzzle-photo"></div>
+        <div class="puzzle-photo"></div>
+        <div class="puzzle-photo"></div>
+        <div class="puzzle-photo"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

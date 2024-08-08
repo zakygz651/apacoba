@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cita Citaku Menjadi Pesamtir👿☝️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cita Citaku Menjadi Pemsatir👿☝️</h1>
+
+        <!-- Pertanyaan dan jawaban -->
+        <div id="step-1" class="pertanyaan">1: Apa yang pesamtir lamkukan saat ada orang sok keren?</div>
+        <div id="step-1-answer" class="jawaban">
+            <button onclick="selectAnswer(1, 0)">hantam kids🤣☝️</button>
+            <button onclick="selectAnswer(1, 0)">kasih stiker jo*ok😂😂</button>
+            <button onclick="selectAnswer(1, 10)">copy textnya terus tambahkan emoji nahan kentut😭☝️</button>
+            <button onclick="selectAnswer(1, 0)">ari sia kunaon🥳</button>
+            <button onclick="selectAnswer(1, 0)">Kick Dari Group/Belomkir👿👿</button>
+        </div>
+
+        <!-- Pertanyaan tambahan hingga step-10 -->
+        <div id="step-2" class="pertanyaan">Pertanyaan 2: kalau kamu pesatir,stiker apa yang kamu simpan?</div>
+        <div id="step-2-answer" class="jawaban">
+            <button onclick="selectAnswer(2, 0)">jomock cik😎</button>
+            <button onclick="selectAnswer(2, 0)">stiker sigma min🤫🧏</button>
+            <button onclick="selectAnswer(2, 10)">stiker emoji ngakak 2024🤣,petrik konyol😂</button>
+            <button onclick="selectAnswer(2, 0)">jihyung bts bang😘</button>
+            <button onclick="selectAnswer(2, 0)">upin,ipin,berbi kocak ngakak original😂😂</button>
+        </div>
+
+        <div id="step-3" class="pertanyaan">Pertanyaan 3: hal yang wamjib dilamkukan untuk seorang pesamtir handal amdalah?</div>
+        <div id="step-3-answer" class="jawaban">
+            <button onclick="selectAnswer(3, 10)">ya jelas harus bisa nyatir mint😂</button>
+            <button onclick="selectAnswer(3, 10)">pakai emoji 😂☝️</button>
+            <button onclick="selectAnswer(3, 0)">nyatir dulu mint</button>
+            <button onclick="selectAnswer(3, 0)">cari orang yang perlu disatirin</button>
+            <button onclick="selectAnswer(3, 0)">siap nyatir setiap saat</button>
+        </div>
+
+        <div id="step-4" class="pertanyaan">Pertanyaan 4: pemsatir pemula harus sopan sama?</div>
+        <div id="step-4-answer" class="jawaban">
+            <button onclick="selectAnswer(4, 0)">admint</button>
+            <button onclick="selectAnswer(4, 0)">senior</button>
+            <button onclick="selectAnswer(4, 10)">blututh?ogah😂☝️☝️</button>
+            <button onclick="selectAnswer(4, 0)">mewing sigma skibidi🤫🧏</button>
+            <button onclick="selectAnswer(4, 0)">gatau mint emang apa?</button>
+        </div>
+
+        <div id="step-5" class="pertanyaan">Pertanyaan 5: apa yang dilakukan pesamtir ketika dihina?</div>
+        <div id="step-5-answer" class="jawaban">
+            <button onclick="selectAnswer(5, 10)">bodoamat sing penting satir rek😎🤫☝️☝️</button>
+            <button onclick="selectAnswer(5, 0)">gack pemduli dan gack tau😂☝️</button>
+            <button onclick="selectAnswer(5, 0)">ya emang😭🖕</button>
+            <button onclick="selectAnswer(5, 0)">halo rek💃☝️</button>
+            <button onclick="selectAnswer(5, 10)">ketik musik,terus kick yang hina</button>
+        </div>
+
+        <!-- Pertanyaan 6-10 -->
+        <div id="step-6" class="pertanyaan">Pertanyaan 6: lu mau aja kesitus jebakan ini😂☝️?</div>
+        <div id="step-6-answer" class="jawaban">
+            <button onclick="selectAnswer(6, 10)">peduli gwejh apah bezir😂☝️</button>
+            <button onclick="selectAnswer(6, 0)">ancrit kena skem😭</button>
+            <button onclick="selectAnswer(6, 0)">kenapa emang?</button>
+            <button onclick="selectAnswer(6, 10)">bapak gw polwan 👮</button>
+            <button onclick="selectAnswer(6, 0)">gak peduli dan gatau</button>
+        </div>
+
+        <div id="step-7" class="pertanyaan">Pertanyaan 7: gw yang buat web,lu siapa? dah izin blm?</div>
+        <div id="step-7-answer" class="jawaban">
+            <button onclick="selectAnswer(7, 10)">Bacot hideng😂</button>
+            <button onclick="selectAnswer(7, 10)">gwe yeng buey web lue siepe deh ijin belem🤪</button>
+            <button onclick="selectAnswer(7, 0)">bacot</button>
+            <button onclick="selectAnswer(7, 0)">sipaling satire😂🙏</button>
+            <button onclick="selectAnswer(7, 0)">yajahahahah😂🤪</button>
+        </div>
+
+        <div id="step-8" class="pertanyaan">Pertanyaan 8: apasi lu so satir banget bajingan</div>
+        <div id="step-8-answer" class="jawaban">
+            <button onclick="selectAnswer(8, 10)">wkwkwkw😂</button>
+            <button onclick="selectAnswer(8, 10)">emang gwe pesamtire🤪</button>
+            <button onclick="selectAnswer(8, 0)">semua benar</button>
+            <button onclick="selectAnswer(8, 0)">lu jawir brengsek</button>
+            <button onclick="selectAnswer(8, 0)">idup gw urusan gw</button>
+        </div>
+
+        <div id="step-9" class="pertanyaan">Pertanyaan 9: selamat anda jadi pesamtir handal🥳🥳</div>
+        <div id="step-9-answer" class="jawaban">
+            <button onclick="selectAnswer(9, 10)"makasih mint😂☝️</button>
+            <button onclick="selectAnswer(9, 10)">thanks kamu brodi🥳</button>
+            <button onclick="selectAnswer(9, 10)">mewing mewing🤫🧏</button>
+            <button onclick="selectAnswer(9, 10)">🥳☝️🥳🥳</button>
+            <button onclick="selectAnswer(9, 0)">congcong oray</button>
+        </div>
+
+        <div id="step-10" class="pertanyaan">Pertanyaan 10: capek gw bikin pertanyaan</div>
+        <div id="step-10-answer" class="jawaban">
+            <button onclick="selectAnswer(10, 10)">ah bodo amat😂</button>
+            <button onclick="selectAnswer(10, 10)">semangat mint😂☝️</button>
+            <button onclick="selectAnswer(10, 10)">katanya pesamtir🤫🙏</button>
+            <button onclick="selectAnswer(10, 10)">Allahuakbar Luthfi!!</button>
+            <button onclick="selectAnswer(10, 10)">Wareg Cik</button>
+        </div>
+
+        <div id="result" class="result">
+            <p>Total Poin: <span id="totalScore">0</span></p>
+            <p id="resultMessage"></p>
+            <img id="result-img" src="" alt="Hasil">
+        </div>
+
+        <div class="button-container">
+            <button id="prevBtn" onclick="changeStep(-1)" style="display:none;">Sebelumnya</button>
+            <button id="nextBtn" onclick="changeStep(1)">Selanjutnya</button>
+            <button id="submitBtn" onclick="calculateScore()" style="display:none;">Kirim</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catherin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4, #f7bb97, #ff677d); /* Gradien latar belakang romantis */
+            color: #fff; /* Warna teks putih untuk kontras yang baik */
+        }
+        .header {
+            text-align: center;
+            margin: 20px;
+            position: relative;
+        }
+        .header h1 {
+            color: red;
+            font-size: 36px;
+            font-family: 'Georgia', serif;
+        }
+        #playPauseBtn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff677d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #playPauseBtn:hover {
+            background-color: #ff9a9e;
+        }
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            z-index: 10; /* Pastikan konten utama muncul di atas latar belakang */
+        }
+        .static-photo {
+            width: 200px;
+            height: 200px;
+            background-image: url('https://telegra.ph/file/cb447dfc8dd1927ec18e5.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 10px;
+            border-radius: 10px; /* Menambahkan sudut membulat */
+        }
+        .moving-photos {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            margin: 10px;
+            border-radius: 10px; /* Menambahkan sudut membulat */
+        }
+        .moving-photos .slider {
+            display: flex;
+            width: 600px; /* Total width of all images combined */
+            height: 200px;
+            animation: slidePhoto 9s infinite;
+        }
+        .moving-photos img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        @keyframes slidePhoto {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-200px); }
+            66% { transform: translateX(-400px); }
+            100% { transform: translateX(0); }
+        }
+        .puzzle-container {
+            display: grid;
+            grid-template-columns: repeat(2, 200px);
+            grid-template-rows: repeat(2, 200px);
+            grid-gap: 10px;
+            justify-content: center;
+            margin: 20px auto;
+            position: relative;
+            width: 420px; /* Including gap space */
+            height: 420px;
+        }
+        .puzzle-photo {
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            opacity: 0;
+            animation: puzzleAnimation 4s forwards;
+            border-radius: 10px; /* Menambahkan sudut membulat */
+        }
+        .puzzle-photo:nth-child(1) {
+            background-image: url('https://telegra.ph/file/971c4176562d765acde1c.jpg');
+            animation-delay: 0s;
+            top: 0;
+            left: 0;
+        }
+        .puzzle-photo:nth-child(2) {
+            background-image: url('https://telegra.ph/file/cb447dfc8dd1927ec18e5.jpg');
+            animation-delay: 1s;
+            top: 0;
+            left: 200px;
+        }
+        .puzzle-photo:nth-child(3) {
+            background-image: url('https://telegra.ph/file/ca2676b100a7e42920347.jpg');
+            animation-delay: 2s;
+            top: 200px;
+            left: 0;
+        }
+        .puzzle-photo:nth-child(4) {
+            background-image: url('https://telegra.ph/file/4b8efea1df4b055ec545b.jpg');
+            animation-delay: 3s;
+            top: 200px;
+            left: 200px;
+        }
+        @keyframes puzzleAnimation {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .info {
+            text-align: center;
+            font-size: 16px;
+            color: #fff; /* Warna teks putih untuk kontras yang baik */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>My Love</h1>
+        <audio id="audio" src="https://rr1---sn-xmjxajvh-jb3zz.googlevideo.com/videoplayback?expire=1722961564&ei=PPqxZrKRE5_Cv_IPuaaDsA8&ip=166.1.131.104&id=o-ALFhWMinOghFpjebaPnjaBVae159CpcBT-nbMtUnjXqb&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AXc671KvKFavMXlKm-x1mVD1ZjxL1fAP8-x823Ah0tI-_8R8APLrFfnVj4HfeIIrE1nTj0_3zThBqVkt&vprv=1&svpuc=1&mime=video%2Fmp4&ns=8lIGL3QyTQco67_zV6jbm9wQ&rqh=1&cnr=14&ratebypass=yes&dur=160.055&lmt=1705993192361275&lmw=1&c=TVHTML5&sefc=1&txp=4538434&n=AQJ1-Sg6zxAmvg&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIhAOIBcCv6_3068UALxtfJC3M0Q4kYGMDPSr2-RpmEgfc9AiBybM1AE4oi4CX3qAfW7vxJgRZi2yhpjp95Sjt26rmqTA%3D%3D&rm=sn-4ox-ixal7e,sn-ixhs76&rrc=79,104&fexp=24350516,24350518,24350556&req_id=a88b314d8a69a3ee&cmsv=e&redirect_counter=2&cms_redirect=yes&ipbypass=yes&mh=Ug&mip=112.215.228.61&mm=29&mn=sn-xmjxajvh-jb3zz&ms=rdu&mt=1722939651&mv=m&mvi=1&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AGtxev0wRQIhAI4lZTECaz6LvosJV7GW9PesaJ6z6K5zeGMuFKSoPWmgAiAEE-WRA1-24-bDY_D2RLEBHNG6QAK3QgTyhjFFqspzDQ%3D%3D" preload="auto"></audio>
+        <button id="playPauseBtn">Play</button>
+    </div>
+    <div class="main-container">
+        <div class="static-photo"></div>
+        <div class="moving-photos">
+            <div class="slider">
+                <img src="https://telegra.ph/file/cb447dfc8dd1927ec18e5.jpg" alt="Foto 1">
+                <img src="https://telegra.ph/file/ca2676b100a7e42920347.jpg" alt="Foto 2">
+                <img src="https://telegra.ph/file/971c4176562d765acde1c.jpg" alt="Foto 3">
+            </div>
+        </div>
+    </div>
+    <div class="puzzle-container">
+        <div class="puzzle-photo"></div>
+        <div class="puzzle-photo"></div>
+        <div class="puzzle-photo"></div>
+        <div class="puzzle-photo"></div>
+    </div>
+    <div class="info">
+        Informasi tentang Erine
+    </div>
+
+    <script>
+        document.getElementById('playPauseBtn').addEventListener('click', function() {
+            var audio = document.getElementById('audio');
+            var button = this;
+            
+            if (audio.paused) {
+                audio.play();
+                button.textContent = 'Pause';
+            } else {
+                audio.pause();
+                button.textContent = 'Play';
+            }
+        });
+    </script>
+</body>
+</html>

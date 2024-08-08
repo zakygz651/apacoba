@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4, #f7bb97, #ff677d);
+    color: #fff;
+}
+.header {
+    text-align: center;
+    margin: 20px;
+    position: relative;
+}
+.header h1 {
+    color: red;
+    font-size: 36px;
+    font-family: 'Georgia', serif;
+}
+#playPauseBtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff677d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#playPauseBtn:hover {
+    background-color: #ff9a9e;
+}
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    z-index: 10;
+}
+.static-photo {
+    width: 200px;
+    height: 200px;
+    background-image: url('https://telegra.ph/file/cb447dfc8dd1927ec18e5.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    border-radius: 10px;
+}
+.moving-photos {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+    border-radius: 10px;
+}
+.moving-photos .slider {
+    display: flex;
+    width: 600px;
+    height: 200px;
+    animation: slidePhoto 9s infinite;
+}
+.moving-photos img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+@keyframes slidePhoto {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-200px); }
+    66% { transform: translateX(-400px); }
+    100% { transform: translateX(0); }
+}
+.puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 200px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+    position: relative;
+    width: 420px;
+    height: 420px;
+}
+.puzzle-photo {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    opacity: 0;
+    animation: puzzleAnimation 4s forwards;
+    border-radius: 10px;
+}
+.puzzle-photo:nth-child(1) {
+    background-image: url('https://telegra.ph/file/971c4176562d765acde1c.jpg');
+    animation-delay: 0s;
+    top: 0;
+    left: 0;
+}
+.puzzle-photo:nth-child(2) {
+    background-image: url('https://telegra.ph/file/cb447dfc8dd1927ec18e5.jpg');
+    animation-delay: 1s;
+    top: 0;
+    left: 200px;
+}
+.puzzle-photo:nth-child(3) {
+    background-image: url('https://telegra.ph/file/ca2676b100a7e42920347.jpg');
+    animation-delay: 2s;
+    top: 200px;
+    left: 0;
+}
+.puzzle-photo:nth-child(4) {
+    background-image: url('https://telegra.ph/file/4b8efea1df4b055ec545b.jpg');
+    animation-delay: 3s;
+    top: 200px;
+    left: 200px;
+}
+@keyframes puzzleAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.h2 {
+    color: black;
+    font-size: 40;
+    font-family: mo;
+}
+.info, .infokan {
+    color: red;
+    font-size: 36px;
+    font-family: 'Georgia', sans-serif;
+    text-align: center;
+}

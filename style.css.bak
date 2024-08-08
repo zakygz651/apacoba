@@ -1,0 +1,147 @@
+body {
+    font-family: 'Minecraft', sans-serif;
+    background-color: #8c8c8c;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* From Uiverse.io by ke1221 */ 
+button {
+  color: #090909;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+button:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 2vw;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 4vw;
+    margin-bottom: 2vw;
+}
+
+.pertanyaan, .jawaban, .result {
+    display: none;
+    margin: 2vw 0;
+    color: #fff;
+}
+
+.pertanyaan {
+    font-size: 2.5vw;
+    font-weight: bold;
+    color: #ffcb00;
+}
+
+.jawaban {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jawaban button {
+    background-color: #ffcb00;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    padding: 1vw 2vw;
+    font-size: 2vw;
+    margin: 1vw 0;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 60%;
+}
+
+.jawaban button:hover {
+    background-color: #ffaa00;
+    transform: scale(1.05);
+}
+
+.result {
+    font-size: 2vw;
+}
+
+img {
+    max-width: 80vw;
+    height: auto;
+    display: block;
+    margin: 2vw auto;
+}
+
+button {
+    font-size: 2vw;
+    padding: 1vw 2vw;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    margin: 1vw;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.button-container {
+    margin-top: 2vw;
+}
+
+.button-container button {
+    margin: 1vw;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 5vw;
+    }
+
+    .pertanyaan {
+        font-size: 4vw;
+    }
+
+    .result {
+        font-size: 3vw;
+    }
+
+    button, .jawaban button {
+        font-size: 3vw;
+        padding: 1.5vw 3vw;
+    }
+}
+
+@media (orientation: landscape) {
+    .container {
+        padding: 4vw;
+    }
+}
+
+@media (orientation: portrait) {
+    .container {
+        padding: 2vw;
+    }
+}
