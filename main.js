@@ -1,6 +1,32 @@
 let currentStep = 1;
-const totalSteps = 10; // Update to 10 steps
+const totalSteps = 10;
 const answers = {};
+
+// Fungsi untuk mendapatkan nilai cookie
+function getCookie(name) {
+    let value = "; " + document.cookie;
+    let parts = value.split("; " + name + "=");
+    if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
+// Fungsi untuk menyetel cookie
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+// Cek apakah pengguna sudah mengisi kuis
+if (getCookie('quizCompleted') === 'true') {
+    alert('Anda sudah mengisi kuis ini sebelumnya.');
+    document.querySelector('.container').style.display = 'none'; // Sembunyikan kuis
+} else {
+    showStep(currentStep); // Lanjutkan kuis jika belum pernah mengisi
+}
 
 function showStep(step) {
     // Hide all steps
@@ -72,24 +98,27 @@ function calculateScore() {
     let imagePath = '';
     if (score >= 100) {
         message = 'Wow Anda Psatier Handal🤓☝️';
-        imagePath = 'foto1.jpg'; // 180-200
+        imagePath = 'foto1.jpg';
     } else if (score >= 80) {
         message = 'Lumayan Lahk Luwh Jdi Pesamtir😂☝️.';
-        imagePath = 'foto2.jpg'; // 140-180
+        imagePath = 'foto2.jpg';
     } else if (score >= 60) {
-        message = 'Lush Pesamtir Amatier,Belajar Lagi Sana👿☝️🖕🖕';
-        imagePath = 'foto3.jpg'; // 100-140
+        message = 'Lush Pesamtir Amatier, Belajar Lagi Sana👿☝️🖕🖕';
+        imagePath = 'foto3.jpg';
     } else if (score >= 40) {
         message = 'Aoa Coba Dek😂🤣🖕☝️☝️';
-        imagePath = 'foto4.jpg'; // 60-100
+        imagePath = 'foto4.jpg';
     } else {
         message = 'Luwh Suki Kan Njink🤣☝️';
-        imagePath = 'foto5.jpg'; // 0-60
+        imagePath = 'foto5.jpg';
     }
     document.getElementById('resultMessage').innerText = message;
     document.getElementById('result-img').src = imagePath;
     document.getElementById('result-img').style.display = 'block';
     document.getElementById('result').style.display = 'block';
+
+    // Setel cookie untuk menandai bahwa kuis sudah diisi
+    setCookie('quizCompleted', 'true', 365); // Cookie berlaku selama 1 tahun
 
     // Hide navigation buttons
     document.getElementById('prevBtn').style.display = 'none';
