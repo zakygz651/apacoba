@@ -22,8 +22,13 @@ function setCookie(name, value, days) {
 
 // Cek apakah pengguna sudah mengisi kuis
 if (getCookie('quizCompleted') === 'true') {
-    alert('Anda sudah mengisi kuis ini sebelumnya.');
+    const score = getCookie('quizScore');
+    const message = getCookie('quizMessage');
+    const imagePath = getCookie('quizImagePath');
+    
+    // Tampilkan hasil kuis
     document.querySelector('.container').style.display = 'none'; // Sembunyikan kuis
+    displayResult(score, message, imagePath);
 } else {
     showStep(currentStep); // Lanjutkan kuis jika belum pernah mengisi
 }
@@ -85,15 +90,8 @@ function calculateScore() {
             score += answers[i];
         }
     }
-    // Hide all questions and answers
-    for (let i = 1; i <= totalSteps; i++) {
-        document.getElementById(`step-${i}`).style.display = 'none';
-        document.getElementById(`step-${i}-answer`).style.display = 'none';
-    }
-    // Show result
-    document.getElementById('totalScore').innerText = score;
 
-    // Determine message and image based on score
+    // Tentukan pesan dan gambar berdasarkan skor
     let message = '';
     let imagePath = '';
     if (score >= 100) {
@@ -112,15 +110,26 @@ function calculateScore() {
         message = 'Luwh Suki Kan Njink🤣☝️';
         imagePath = 'foto5.jpg';
     }
+
+    // Simpan skor, pesan, dan jalur gambar dalam cookie
+    setCookie('quizCompleted', 'true', 365); // Cookie berlaku selama 1 tahun
+    setCookie('quizScore', score, 365);
+    setCookie('quizMessage', message, 365);
+    setCookie('quizImagePath', imagePath, 365);
+
+    // Tampilkan hasil
+    displayResult(score, message, imagePath);
+}
+
+function displayResult(score, message, imagePath) {
+    // Tampilkan hasil kuis
+    document.getElementById('totalScore').innerText = score;
     document.getElementById('resultMessage').innerText = message;
     document.getElementById('result-img').src = imagePath;
     document.getElementById('result-img').style.display = 'block';
     document.getElementById('result').style.display = 'block';
 
-    // Setel cookie untuk menandai bahwa kuis sudah diisi
-    setCookie('quizCompleted', 'true', 365); // Cookie berlaku selama 1 tahun
-
-    // Hide navigation buttons
+    // Sembunyikan tombol navigasi
     document.getElementById('prevBtn').style.display = 'none';
     document.getElementById('nextBtn').style.display = 'none';
     document.getElementById('submitBtn').style.display = 'none';
